@@ -1,8 +1,19 @@
 import mongoose from "mongoose";
 
 const LinkSchema = mongoose.Schema({
-    // _id: Number,
     originalUrl: String,
+    clicks: [{
+        ipAddress: String,
+        time: Date,
+        targetParamValue: String
+    }],
+    targetParamName: String,
+    targetValues: [
+        {
+            name: String,
+            value: String
+        }
+    ]
 });
 
 export default mongoose.model("links", LinkSchema);

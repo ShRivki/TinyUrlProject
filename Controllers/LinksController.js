@@ -19,9 +19,8 @@ const LinksController = {
     },
   
     add: async (req, res) => {
-      const { originalUrl } = req.body;
       try {
-        const newLink = await links.create({ originalUrl });//הוספת חדש
+        const newLink = await links.create(req.body);//הוספת חדש
         res.json(newLink);
       } catch (e) {
         res.status(400).json({ message: e.message });
@@ -30,7 +29,7 @@ const LinksController = {
   
     update: async (req, res) => {
       const { id } = req.params;
-      // const { originalUrl } = req.body;
+      const { originalUrl } = req.body;
       try {
         const updatedLink = await links.findByIdAndUpdate(id, req.body, {
           originalUrl: originalUrl,
