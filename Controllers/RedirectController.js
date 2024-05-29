@@ -11,6 +11,7 @@ const RedirectController = {
             if(target)
             {
                 targetValue=link.targetValues.find(t=>t.name==target)
+                console.log(targetValue)
             }     
             const click={
                 time:new Date(),

@@ -1,5 +1,5 @@
 import users from "../Models/UserModel.js";
-import LinksController from "./LinksController.js";
+//import LinksController from "./LinksController.js";
 const UsersController = {
   getList: async (req, res) => {
     try {
